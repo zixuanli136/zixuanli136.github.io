@@ -6,18 +6,17 @@
 <title>Zixuan Li</title>
 
 <style>
-
 /* ===== GLOBAL ===== */
 body{
   font-family:"Times New Roman", Times, serif;
-  font-size:20px;      
-  line-height:1.3;     
+  font-size:20px;        /* 大大大 */
+  line-height:1.6;       /* 你原来 1.3 太挤 */
   margin:0;
   padding:0;
   background:#ffffff;
   color:#000;
 }
-  
+
 .container{
   max-width:950px;
   margin:30px auto;
@@ -26,7 +25,7 @@ body{
 
 /* ===== NAME ===== */
 .name{
-  font-size:38px;
+  font-size:48px;        /* 名字更大 */
   font-weight:700;
   color:#2f63c7;
   margin-bottom:6px;
@@ -46,7 +45,7 @@ body{
 }
 
 .photo img{
-  width:160px;
+  width:170px;
   border:1px solid #aaa;
 }
 
@@ -56,38 +55,33 @@ a:hover{ text-decoration:underline; }
 
 /* ===== SECTION ===== */
 h2{
-  font-size:20px;
+  font-size:26px;        /* 标题更大 */
   color:#2f63c7;
-  margin-top:28px;
-  margin-bottom:4px;
+  margin-top:34px;
+  margin-bottom:6px;
   text-transform:uppercase;
 }
 
 .section-hr{
   border:none;
   border-top:1px solid #bbb;
-  margin-bottom:12px;
+  margin-bottom:14px;
 }
 
 /* ===== LISTS ===== */
-ul{
-  padding-left:22px;
-}
-
-li{
-  margin-bottom:8px;
-}
+ul{ padding-left:26px; }
+li{ margin-bottom:10px; }
 
 /* ===== PUBLICATIONS ===== */
 .year-title{
-  font-size:18px;
+  font-size:22px;        /* 年份更大 */
   font-weight:bold;
-  margin-top:16px;
+  margin-top:18px;
 }
 
 .pub-note{
-  font-size:14px;
-  margin-bottom:10px;
+  font-size:16px;        /* 说明也跟着变大 */
+  margin-bottom:12px;
 }
 
 .pub-list{
@@ -98,7 +92,7 @@ li{
 
 .pub-list li{
   counter-increment: pubcounter;
-  margin-bottom:12px;
+  margin-bottom:14px;
 }
 
 .pub-list li::before{
@@ -106,143 +100,133 @@ li{
   font-weight:bold;
 }
 
-.venue{
-  font-weight:bold;
-}
+.venue{ font-weight:bold; }
 
 /* ===== FOOTER ===== */
 .footer{
-  margin-top:30px;
-  font-size:14px;
+  margin-top:34px;
+  font-size:16px;
   color:#666;
 }
-
 </style>
 </head>
 
 <body>
 <div class="container">
 
-<div class="name">Zixuan Li</div>
-<hr class="hr">
+  <div class="name">Zixuan Li</div>
+  <hr class="hr">
 
-<div class="header">
-  <div class="photo">
-    <img src="photo.jpg" alt="Photo">
+  <div class="header">
+    <div class="photo">
+      <img src="photo.jpg" alt="Photo">
+    </div>
+
+    <div class="contact">
+      <div><strong>M.S. Student</strong>, Shanghai Jiao Tong University</div>
+      <div>Email: <a href="mailto:zixuanli@sjtu.edu.cn">zixuanli@sjtu.edu.cn</a></div>
+      <div>Shanghai, China</div>
+    </div>
   </div>
 
-  <div class="contact">
-    <div><strong>M.S. Student</strong>, Shanghai Jiao Tong University</div>
-    <div>Email: <a href="mailto:zixuanli@sjtu.edu.cn">zixuanli@sjtu.edu.cn</a></div>
-    <div>Shanghai, China</div>
-  </div>
-</div>
+  <h2>Biography</h2>
+  <hr class="section-hr">
+  <p>
+    I am currently a first-year M.S. student with the iCAS Lab at Shanghai Jiao Tong University,
+    under the supervision of <a href="https://sites.gc.sjtu.edu.cn/xinfei-guo/">Prof. Xinfei Guo</a>.
+    I received my B.Eng. degree in Information Engineering from Beijing University of Posts and Telecommunications in 2025.
+  </p>
+  <p>
+    My research focuses on electronic design automation (EDA), particularly physical design for 2.5D and 3D integrated circuits,
+    including placement and floorplanning optimization.
+  </p>
 
-<h2>Biography</h2>
-<hr class="section-hr">
-<p>
-I am currently a first-year M.S. student with the iCAS Lab at Shanghai Jiao Tong University,
-under the supervision of <a href="https://sites.gc.sjtu.edu.cn/xinfei-guo/">Prof. Xinfei Guo</a>.
-I received my B.Eng. degree in Information Engineering from Beijing University of Posts and Telecommunications in 2025.
-</p>
-<p>
-My research focuses on electronic design automation (EDA), particularly physical design for 2.5D and 3D integrated circuits,
-including placement and floorplanning optimization.
-</p>
+  <h2>Research Interests</h2>
+  <hr class="section-hr">
+  <ul>
+    <li>Machine Learning for EDA</li>
+    <li>Physical Design (2.5D / 3D ICs)</li>
+  </ul>
 
-<h2>Research Interests</h2>
-<hr class="section-hr">
-<ul>
-  <li>Machine Learning for EDA</li>
-  <li>Power Modeling</li>
-  <li>Design Space Exploration</li>
-  <li>Physical Design (2.5D / 3D ICs)</li>
-</ul>
+  <h2>Education</h2>
+  <hr class="section-hr">
+  <ul>
+    <li><strong>Shanghai Jiao Tong University</strong>, M.S. in Computer Science and Technology, 2025–Present</li>
+    <li><strong>Beijing University of Posts and Telecommunications</strong>, B.Eng. in Information Engineering, 2021–2025</li>
+  </ul>
 
-<h2>Education</h2>
-<hr class="section-hr">
-<ul>
-  <li><strong>Shanghai Jiao Tong University</strong>, M.S. in Computer Science and Technology, 2025–Present</li>
-  <li><strong>Beijing University of Posts and Telecommunications</strong>, B.Eng. in Information Engineering, 2021–2025</li>
-</ul>
+  <h2>Research Experience</h2>
+  <hr class="section-hr">
+  <ul>
+    <li><strong>SJTU Global College iCAS Lab</strong>, Research Intern (2024–2025)</li>
+    <li><strong>BUPT Integrated EDA Team</strong>, Research Intern (2023–2025)</li>
+  </ul>
 
-<h2>Research Experience</h2>
-<hr class="section-hr">
-<ul>
-  <li><strong>SJTU Global College iCAS Lab</strong>, Research Intern (2024–2025)</li>
-  <li><strong>BUPT Integrated EDA Team</strong>, Research Intern (2023–2025)</li>
-</ul>
+  <h2>Publications</h2>
+  <hr class="section-hr">
 
-<h2>Publications</h2>
-<hr class="section-hr">
+  <p class="pub-note">
+    * denotes equal contribution, # denotes corresponding author.
+  </p>
 
-<p class="pub-note">
-* denotes equal contribution, # denotes corresponding author.
-</p>
+  <div class="year-title">2026</div>
+  <ul class="pub-list">
+    <li>
+      <strong>Zixuan Li*</strong>, Kanglin Tian*, Fan Hu, Zirui Li, Xinyue Wu,
+      Hengyuan Zhang, Shixin Chen, Jianwang Zhai#, Xinfei Guo#, Kang Zhao.
+      <br>
+      <i>ChiPlanner: Physically-Aware and Timing-Driven Design Planner for 2.5D Multi-Chiplet Systems.</i>
+      <br>
+      ACM/IEEE Design Automation Conference (<span class="venue">DAC</span>), 2026.
+    </li>
+  </ul>
 
-<div class="year-title">2026</div>
-<ul class="pub-list">
-  <li>
-    <strong>Zixuan Li*</strong>, Kanglin Tian*, Fan Hu, Zirui Li, Xinyue Wu,
-    Hengyuan Zhang, Shixin Chen, Jianwang Zhai#, Xinfei Guo#, Kang Zhao.
-    <br>
-    <i>ChiPlanner: Physically-Aware and Timing-Driven Design Planner for 2.5D Multi-Chiplet Systems.</i>
-    <br>
-    ACM/IEEE Design Automation Conference (<span class="venue">DAC</span>), 2026.
-  </li>
-</ul>
-  
-<div class="year-title">2025</div>
-<ul class="pub-list">
+  <div class="year-title">2025</div>
+  <ul class="pub-list">
+    <li>
+      <strong>Zixuan Li</strong>, Kanglin Tian, Jianwang Zhai#, Zirui Li, Kang Zhao.
+      <br>
+      <i>HieRFP: A Hierarchical Recognition Framework and Floorplanning for Reusable Modules.</i>
+      <br>
+      IEEE International Symposium on Circuits and Systems (<span class="venue">ISCAS</span>), 2025.
+    </li>
 
-  <li>
-    <strong>Zixuan Li</strong>, Kanglin Tian, Jianwang Zhai#, Zirui Li, Kang Zhao.
-    <br>
-    <i>HieRFP: A Hierarchical Recognition Framework and Floorplanning for Reusable Modules.</i>
-    <br>
-    IEEE International Symposium on Circuits and Systems (<span class="venue">ISCAS</span>), 2025.
-  </li>
+    <li>
+      Zirui Li, Kanglin Tian, Jianwang Zhai#, <strong>Zixuan Li</strong>,
+      Shixiong Kai, Siyuan Xu, Bei Yu, Kang Zhao.
+      <br>
+      <i>FTAFP: A Feedthrough-Aware Floorplanner for Hierarchical Design of Large-Scale SoCs.</i>
+      <br>
+      IEEE/ACM Asian and South Pacific Design Automation Conference (<span class="venue">ASP-DAC</span>), 2025.
+    </li>
 
-  <li>
-    Zirui Li, Kanglin Tian, Jianwang Zhai#, <strong>Zixuan Li</strong>,
-    Shixiong Kai, Siyuan Xu, Bei Yu, Kang Zhao.
-    <br>
-    <i>FTAFP: A Feedthrough-Aware Floorplanner for Hierarchical Design of Large-Scale SoCs.</i>
-    <br>
-    IEEE/ACM Asian and South Pacific Design Automation Conference (<span class="venue">ASP-DAC</span>), 2025.
-  </li>
+    <li>
+      Xiaotian Zhao, <strong>Zixuan Li</strong>,
+      Yichen Cai, Jiayin Chen, Yuanshan Pan, Xinfei Guo#.
+      <br>
+      <i>DARE: Enriching Physical Dataflow Awareness for Macro Placement Optimization.</i>
+      <br>
+      ACM Transactions on Design Automation of Electronic Systems (<span class="venue">TODAES</span>).
+    </li>
+  </ul>
 
-  <li>
-    Xiaotian Zhao, <strong>Zixuan Li</strong>,
-    Yichen Cai, Jiayin Chen, Yuanshan Pan, Xinfei Guo#.
-    <br>
-    <i>DARE: Enriching Physical Dataflow Awareness for Macro Placement Optimization.</i>
-    <br>
-    ACM Transactions on Design Automation of Electronic Systems (<span class="venue">TODAES</span>).
-  </li>
+  <div class="year-title">2024</div>
+  <ul class="pub-list">
+    <li>
+      Zirui Li, Jianwang Zhai#, <strong>Zixuan Li</strong>,
+      Zhongdong Qi, Kang Zhao.
+      <br>
+      <i>Effective Resource Model and Cost Scheme for Maze Routing in 3D Global Routing.</i>
+      <br>
+      IEEE International Symposium on Circuits and Systems (<span class="venue">ISCAS</span>), 2024.
+    </li>
+  </ul>
 
-</ul>
+  <h2>Skills</h2>
+  <hr class="section-hr">
+  <p>C/C++, Python, LaTeX, TCL</p>
 
-<div class="year-title">2024</div>
-<ul class="pub-list">
-  <li>
-    Zirui Li, Jianwang Zhai#, <strong>Zixuan Li</strong>,
-    Zhongdong Qi, Kang Zhao.
-    <br>
-    <i>Effective Resource Model and Cost Scheme for Maze Routing in 3D Global Routing.</i>
-    <br>
-    IEEE International Symposium on Circuits and Systems (<span class="venue">ISCAS</span>), 2024.
-  </li>
-
-
-
-<h2>Skills</h2>
-<hr class="section-hr">
-<p>C/C++, Python, LaTeX, TCL</p>
-
-<div class="footer">
-© 2026 Zixuan Li
-</div>
+  <div class="footer">© 2026 Zixuan Li</div>
 
 </div>
 </body>
