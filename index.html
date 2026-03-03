@@ -1,151 +1,164 @@
-<!doctype html>
-<html lang="zh-CN">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>你的名字 | GitHub 主页</title>
-  <meta name="description" content="个人主页：介绍、项目、联系方式" />
-  <style>
-    :root { --bg:#0b1020; --card:#121a33; --text:#e8ecff; --muted:#aab3d6; --accent:#7c5cff; }
-    *{ box-sizing:border-box; }
-    body{
-      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      background: radial-gradient(1200px 800px at 20% 10%, #1a2361 0%, var(--bg) 55%) fixed;
-      color:var(--text);
-    }
-    a{ color:inherit; text-decoration:none; }
-    .wrap{ max-width:960px; margin:0 auto; padding:48px 20px 72px; }
-    .nav{ display:flex; justify-content:space-between; align-items:center; gap:16px; }
-    .brand{ font-weight:700; letter-spacing:.2px; }
-    .pillbar{ display:flex; gap:10px; flex-wrap:wrap; }
-    .pill{
-      padding:10px 14px; border:1px solid rgba(255,255,255,.12); border-radius:999px;
-      background: rgba(18,26,51,.55); backdrop-filter: blur(10px);
-      transition: transform .12s ease, border-color .12s ease;
-    }
-    .pill:hover{ transform: translateY(-1px); border-color: rgba(124,92,255,.7); }
-    .hero{ margin-top:46px; display:grid; grid-template-columns: 1.3fr .7fr; gap:18px; }
-    @media (max-width: 860px){ .hero{ grid-template-columns:1fr; } }
-    .card{
-      background: rgba(18,26,51,.72);
-      border: 1px solid rgba(255,255,255,.10);
-      border-radius: 18px;
-      padding: 22px;
-      box-shadow: 0 18px 40px rgba(0,0,0,.35);
-    }
-    .title{ font-size:42px; line-height:1.05; margin:0 0 10px; }
-    .sub{ color:var(--muted); font-size:16px; line-height:1.6; margin:0; }
-    .cta{ margin-top:16px; display:flex; gap:10px; flex-wrap:wrap; }
-    .btn{
-      display:inline-flex; align-items:center; gap:10px; padding:12px 14px; border-radius:12px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.06);
-    }
-    .btn.primary{ background: linear-gradient(135deg, rgba(124,92,255,.95), rgba(70,210,255,.65)); border-color: rgba(124,92,255,.55); }
-    .grid{ margin-top:18px; display:grid; grid-template-columns: 1fr 1fr; gap:18px; }
-    @media (max-width: 860px){ .grid{ grid-template-columns:1fr; } }
-    .h2{ margin:0 0 10px; font-size:18px; }
-    .list{ display:grid; gap:10px; margin:0; padding:0; list-style:none; }
-    .item{
-      padding:12px 12px; border-radius:14px; border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.03);
-      display:flex; justify-content:space-between; gap:12px; align-items:flex-start;
-    }
-    .item small{ color:var(--muted); display:block; margin-top:4px; }
-    .tag{ font-size:12px; color: rgba(255,255,255,.85); border:1px solid rgba(255,255,255,.14); padding:6px 10px; border-radius:999px; white-space:nowrap; }
-    footer{ margin-top:28px; color:var(--muted); font-size:13px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; }
-    .avatar{
-      width:100%; aspect-ratio:1/1; border-radius:16px;
-      border:1px solid rgba(255,255,255,.12);
-      background: linear-gradient(135deg, rgba(124,92,255,.35), rgba(70,210,255,.18));
-      display:flex; align-items:center; justify-content:center;
-      font-weight:800; font-size:28px; color: rgba(255,255,255,.9);
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zixuan Li</title>
+
+<style>
+body {
+    font-family: "Times New Roman", serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #222;
+}
+
+.container {
+    width: 800px;
+    margin: 40px auto;
+    line-height: 1.6;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+h2 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    margin-top: 40px;
+}
+
+a {
+    color: #003366;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.photo img {
+    width: 140px;
+}
+
+.contact {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+.pub-title {
+    font-weight: bold;
+}
+
+.footer {
+    margin-top: 50px;
+    font-size: 13px;
+    color: #777;
+}
+</style>
 </head>
+
 <body>
-  <div class="wrap">
-    <div class="nav">
-      <div class="brand">你的名字</div>
-      <div class="pillbar">
-        <a class="pill" href="#projects">项目</a>
-        <a class="pill" href="#about">关于</a>
-        <a class="pill" href="#contact">联系</a>
-      </div>
-    </div>
+<div class="container">
 
-    <section class="hero">
-      <div class="card">
-        <h1 class="title">你好，我是 你的名字 👋</h1>
-        <p class="sub">一句话介绍你自己：例如「做量化 / 前端 / AI 工程，喜欢把想法做成产品」</p>
-        <div class="cta">
-          <a class="btn primary" href="https://github.com/你的用户名" target="_blank" rel="noreferrer">GitHub</a>
-          <a class="btn" href="#projects">看项目</a>
-          <a class="btn" href="mailto:your@email.com">发邮件</a>
+<div class="header">
+    <div>
+        <h1>Zixuan Li</h1>
+        <div class="contact">
+            M.S. Student, Shanghai Jiao Tong University <br>
+            Email: <a href="mailto:zixuanli@sjtu.edu.cn">zixuanli@sjtu.edu.cn</a> <br>
+            Shanghai, China
         </div>
-      </div>
+    </div>
+    <div class="photo">
+        <img src="photo.jpg" alt="Photo">
+    </div>
+</div>
 
-      <div class="card">
-        <div class="avatar">YN</div>
-        <p class="sub" style="margin-top:12px">
-          你可以把头像改成图片：把仓库里放一张 <b>avatar.png</b>，然后把这里换成 &lt;img&gt;。
-        </p>
-      </div>
-    </section>
+<h2>Biography</h2>
+<p>
+I am currently a first-year M.S. student with the iCAS Lab at Shanghai Jiao Tong University,
+under the supervision of <a href="https://sites.gc.sjtu.edu.cn/xinfei-guo/">Prof. Xinfei Guo</a>.
+I received my B.Eng. degree in Information Engineering from Beijing University of Posts and Telecommunications in 2025.
+</p>
 
-    <section id="projects" class="grid">
-      <div class="card">
-        <h2 class="h2">精选项目</h2>
-        <ul class="list">
-          <li class="item">
-            <div>
-              <b><a href="https://github.com/你的用户名/项目1" target="_blank" rel="noreferrer">项目 1</a></b>
-              <small>一句话说明：解决什么问题，用了哪些技术。</small>
-            </div>
-            <span class="tag">Python</span>
-          </li>
-          <li class="item">
-            <div>
-              <b><a href="https://github.com/你的用户名/项目2" target="_blank" rel="noreferrer">项目 2</a></b>
-              <small>一句话说明：亮点/指标/成果。</small>
-            </div>
-            <span class="tag">Web</span>
-          </li>
-          <li class="item">
-            <div>
-              <b><a href="https://github.com/你的用户名/项目3" target="_blank" rel="noreferrer">项目 3</a></b>
-              <small>一句话说明：为什么有趣。</small>
-            </div>
-            <span class="tag">ML</span>
-          </li>
-        </ul>
-      </div>
+<p>
+My research focuses on electronic design automation (EDA), particularly physical design for 2.5D and 3D integrated circuits,
+including placement and floorplanning optimization.
+</p>
 
-      <div class="card" id="about">
-        <h2 class="h2">关于我</h2>
-        <p class="sub">
-          写 3~5 行：你现在做什么、擅长什么、想做什么。<br/>
-          技能：Python / TypeScript / React / …<br/>
-          城市：Singapore / …（可选）
-        </p>
-        <div style="height:10px"></div>
-        <h2 class="h2" id="contact">联系</h2>
-        <p class="sub">
-          Email：<a href="mailto:your@email.com">your@email.com</a><br/>
-          LinkedIn：<a href="https://www.linkedin.com/in/yourid" target="_blank" rel="noreferrer">yourid</a><br/>
-          X/微博：<a href="https://x.com/yourid" target="_blank" rel="noreferrer">@yourid</a>
-        </p>
-      </div>
-    </section>
+<h2>Education</h2>
+<ul>
+<li><strong>Shanghai Jiao Tong University</strong>, M.S. in Computer Science and Technology, 2025–Present</li>
+<li><strong>Beijing University of Posts and Telecommunications</strong>, B.Eng. in Information Engineering, 2021–2025</li>
+</ul>
 
-    <footer>
-      <span>© <span id="y"></span> 你的名字</span>
-      <span>Built with GitHub Pages</span>
-    </footer>
-  </div>
+<h2>Research Experience</h2>
+<ul>
+<li><strong>SJTU Global College iCAS Lab</strong>, Research Intern (2024–2025)</li>
+<li><strong>BUPT Integrated EDA Team</strong>, Research Intern (2023–2025)</li>
+</ul>
 
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+<h2>Publications</h2>
+
+<p>
+<strong>[C1] Zixuan Li</strong>, Kanglin Tian, Fan Hu, Zirui Li, Xinyue Wu,
+Hengyuan Zhang, Shixin Chen, Jianwang Zhai, Xinfei Guo, Kang Zhao.<br>
+<i>ChiPlanner: Physically-Aware and Timing-Driven Design Planner for 2.5D Multi-Chiplet Systems.</i><br>
+ACM/IEEE Design Automation Conference (DAC), 2026.
+</p>
+
+<p>
+<strong>[C2] Zixuan Li</strong>, Kanglin Tian, Jianwang Zhai, Zirui Li, Kang Zhao.<br>
+<i>HieRFP: A Hierarchical Recognition Framework and Floorplanning for Reusable Modules.</i><br>
+IEEE International Symposium on Circuits and Systems (ISCAS), 2025.
+</p>
+
+<p>
+<strong>[C3] Zirui Li</strong>, Kanglin Tian, Jianwang Zhai, <strong>Zixuan Li</strong>, 
+Shixiong Kai, Siyuan Xu, Bei Yu, Kang Zhao.<br>
+<i>FTAFP: A Feedthrough-Aware Floorplanner for Hierarchical Design of Large-Scale SoCs.</i><br>
+IEEE/ACM Asian and South Pacific Design Automation Conference (ASP-DAC), 2025.
+</p>
+
+<p>
+<strong>[C4] Zirui Li</strong>, Jianwang Zhai, <strong>Zixuan Li</strong>, 
+Zhongdong Qi, Kang Zhao.<br>
+<i>Effective Resource Model and Cost Scheme for Maze Routing in 3D Global Routing.</i><br>
+IEEE International Symposium on Circuits and Systems (ISCAS), 2024.
+</p>
+
+<p>
+<strong>[J1] Xiaotian Zhao</strong>, <strong>Zixuan Li</strong>, 
+Yichen Cai, Jiayin Chen, Yuanshan Pan, Xinfei Guo.<br>
+<i>DARE: Enriching Physical Dataflow Awareness for Macro Placement Optimization.</i><br>
+ACM Transactions on Design Automation of Electronic Systems (TODAES).
+</p>
+
+<h2>Skills</h2>
+<p>
+C/C++, Python, LaTeX, TCL
+</p>
+
+
+
+<div class="footer">
+© 2026 Zixuan Li
+</div>
+
+</div>
 </body>
 </html>
