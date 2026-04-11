@@ -3,226 +3,346 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Zixuan Li | Personal academic website, publications, and research experience in EDA physical design.">
 <title>Zixuan Li</title>
 
 <style>
-/* ===== GLOBAL ===== */
-body{
-  font-family:"Times New Roman", Times, serif;
-  font-size:20px;        
-  line-height:1.6;       
-  margin:0;
-  padding:0;
-  background:#ffffff;
-  color:#000;
+:root {
+  --bg: #f6f8fc;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --primary: #1d4ed8;
+  --border: #e5e7eb;
+  --shadow: 0 8px 26px rgba(17, 24, 39, 0.06);
 }
 
-.container{
-  max-width:950px;
-  margin:30px auto;
-  padding:0 20px;
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
 }
 
-/* ===== NAME ===== */
-.name{
-  font-size:48px;        
-  font-weight:700;
-  color:#2f63c7;
-  margin-bottom:6px;
+.container {
+  max-width: 980px;
+  margin: 24px auto 56px;
+  padding: 0 18px;
 }
 
-.hr{
-  border:none;
-  border-top:1px solid #999;
-  margin:8px 0 20px 0;
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 22px;
 }
 
-/* ===== HEADER ===== */
-.header{
-  display:flex;
-  gap:25px;
-  align-items:flex-start;
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(6px);
+  background: rgba(246, 248, 252, 0.86);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 16px;
 }
 
-.photo img{
-  width:170px;
-  border:1px solid #aaa;
+.top-nav .inner {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 10px 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.contact a{ color:#2f63c7; }
-a{ color:#2f63c7; text-decoration:none; }
-a:hover{ text-decoration:underline; }
-
-/* ===== SECTION ===== */
-h2{
-  font-size:26px;        
-  color:#2f63c7;
-  margin-top:34px;
-  margin-bottom:6px;
-  text-transform:uppercase;
+.brand {
+  font-weight: 700;
+  color: var(--primary);
 }
 
-.section-hr{
-  border:none;
-  border-top:1px solid #bbb;
-  margin-bottom:14px;
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
-/* ===== LISTS ===== */
-ul{ padding-left:26px; }
-li{ margin-bottom:10px; }
-
-/* ===== PUBLICATIONS ===== */
-.year-title{
-  font-size:26px;        
-  font-weight:bold;
-  margin-top:18px;
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px;
 }
 
-.pub-note{
-  font-size:16px;       
-  margin-bottom:12px;
+.nav-links a:hover,
+a:hover {
+  color: var(--primary);
 }
 
-.pub-list{
-  list-style:none;
-  padding-left:0;
+.header {
+  display: flex;
+  gap: 22px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.photo img {
+  width: 156px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+h1 {
+  margin: 0;
+  font-size: 42px;
+  line-height: 1.2;
+  color: #11327a;
+}
+
+.contact {
+  margin-top: 8px;
+  color: var(--muted);
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.section {
+  margin-top: 18px;
+}
+
+h2 {
+  margin: 0 0 8px;
+  font-size: 21px;
+  color: #193a8a;
+  letter-spacing: 0.3px;
+}
+
+.section + .section {
+  border-top: 1px dashed var(--border);
+  padding-top: 18px;
+}
+
+ul {
+  margin: 0;
+  padding-left: 22px;
+}
+
+li { margin-bottom: 8px; }
+
+.pub-note {
+  margin: 6px 0 14px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.year-title {
+  margin-top: 14px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.pub-list {
+  list-style: none;
+  padding-left: 0;
   counter-reset: pubcounter;
 }
 
-.pub-list li{
+.pub-list li {
   counter-increment: pubcounter;
-  margin-bottom:14px;
+  margin-bottom: 12px;
+  padding-left: 6px;
 }
 
-.pub-list li::before{
+.pub-list li::before {
   content: "[" counter(pubcounter) "] ";
-  font-weight:bold;
+  font-weight: 700;
 }
 
-.venue{ font-weight:bold; }
+.venue { font-weight: 700; }
 
-/* ===== FOOTER ===== */
-.footer{
-  margin-top:34px;
-  font-size:16px;
-  color:#666;
+.footer {
+  margin-top: 22px;
+  color: var(--muted);
+  font-size: 14px;
+  text-align: center;
+}
+
+.back-to-top {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 14px;
+}
+
+@media (max-width: 720px) {
+  h1 { font-size: 34px; }
+  .photo img { width: 128px; }
+  .top-nav .inner { padding: 10px 14px; }
 }
 </style>
 </head>
 
-<body>
-<div class="container">
-
-  <div class="name">Zixuan Li</div>
-  <hr class="hr">
-
-  <div class="header">
-    <div class="photo">
-      <img src="photo.jpg" alt="Photo">
+<body id="top">
+  <nav class="top-nav">
+    <div class="inner">
+      <div class="brand">Zixuan Li</div>
+      <div class="nav-links">
+        <a href="#bio">Biography</a>
+        <a href="#interests">Research Interests</a>
+        <a href="#news">News</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#awards">Awards</a>
+        <a href="#publications">Publications</a>
+        <a href="#skills">Skills</a>
+      </div>
     </div>
+  </nav>
 
-<div>
-  Email: <a href="mailto:zixuanli@sjtu.edu.cn">zixuanli@sjtu.edu.cn</a> |
-  <a href="https://github.com/ic4icu" target="_blank">GitHub</a> |
-  Shanghai, China
-</div>
-    
+  <div class="container">
+    <main class="card">
+      <div class="header">
+        <div class="photo">
+          <img src="photo.jpg" alt="Photo of Zixuan Li">
+        </div>
+        <div>
+          <h1>Zixuan Li</h1>
+          <div class="contact">
+            Email: <a href="mailto:zixuanli@sjtu.edu.cn">zixuanli@sjtu.edu.cn</a> ·
+            <a href="https://github.com/ic4icu" target="_blank" rel="noopener noreferrer">GitHub</a> ·
+            Shanghai, China
+          </div>
+        </div>
+      </div>
+
+      <section class="section" id="bio">
+        <h2>Biography</h2>
+        <p>
+          I am currently a first-year M.S. student with the iCAS Lab at Shanghai Jiao Tong University,
+          under the supervision of <a href="https://sites.gc.sjtu.edu.cn/xinfei-guo/">Prof. Xinfei Guo</a>.
+          I received my B.Eng. degree in Information Engineering from Beijing University of Posts and Telecommunications in 2025.
+        </p>
+        <p>
+          My research focuses on electronic design automation (EDA), particularly physical design for 2.5D and 3D integrated circuits,
+          including placement and floorplanning optimization.
+        </p>
+      </section>
+
+      <section class="section" id="interests">
+        <h2>Research Interests</h2>
+        <ul>
+          <li>Physical Design (2.5D / 3D ICs)</li>
+          <li>Machine Learning for EDA</li>
+        </ul>
+      </section>
+
+
+      <section class="section" id="news">
+        <h2>News</h2>
+        <ul>
+          <li><strong>Apr 2026:</strong> Selected as a <strong>DAC Young Fellow</strong>.</li>
+          <li><strong>Feb 2026:</strong> Our paper was accepted by <strong>DAC 2026</strong>.</li>
+          <li><strong>Dec 2025:</strong> Our work was accepted by <strong>TODAES</strong>.</li>
+          <li><strong>Sep 2025:</strong> Joined <strong>iCAS Lab, Shanghai Jiao Tong University</strong> as an M.S. student.</li>
+          <li><strong>Jun 2025:</strong> Graduated from <strong>BUPT</strong> with a B.Eng. degree in Information Engineering.</li>
+          <li><strong>Feb 2025:</strong> My first first-author paper was accepted by <strong>ISCAS 2025</strong>.</li>
+          <li><strong>Dec 2024:</strong> Won the <strong>Second Prize</strong> in the EDA Elite Challenge.</li>
+        </ul>
+      </section>
+
+      <section class="section" id="education">
+        <h2>Education</h2>
+        <ul>
+          <li><strong>Shanghai Jiao Tong University</strong>, M.S. in Computer Science and Technology, 2025–Present</li>
+          <li><strong>Beijing University of Posts and Telecommunications</strong>, B.Eng. in Information Engineering, 2021–2025</li>
+        </ul>
+      </section>
+
+      <section class="section" id="experience">
+        <h2>Research Experience</h2>
+        <ul>
+          <li><strong>SJTU Global College iCAS Lab</strong>, Research Intern (2024–2025)</li>
+          <li><strong>BUPT Integrated EDA Team</strong>, Research Intern (2023–2025)</li>
+        </ul>
+      </section>
+
+
+      <section class="section" id="awards">
+        <h2>Awards</h2>
+        <ul>
+          <li><strong>2026</strong> · DAC Young Fellow</li>
+          <li><strong>2024</strong> · EDA Elite Challenge, Second Prize</li>
+        </ul>
+      </section>
+
+      <section class="section" id="publications">
+        <h2>Publications</h2>
+        <p class="pub-note">* denotes equal contribution, # denotes corresponding author.</p>
+
+        <div class="year-title">2026</div>
+        <ul class="pub-list">
+          <li>
+            <strong>Zixuan Li*</strong>, Kanglin Tian*, Fan Hu, Zirui Li, Xinyue Wu, Hengyuan Zhang, Shixin Chen, Jianwang Zhai#, Xinfei Guo#, Kang Zhao,
+            <i>ChiPlanner: Physically-Aware and Timing-Driven Design Planner for 2.5D Multi-Chiplet Systems.</i>
+            ACM/IEEE Design Automation Conference (<span class="venue">DAC</span>), 2026.
+          </li>
+
+          <li>
+            Xiaotian Zhao*, Yingjie Wang*, <strong>Zixuan Li</strong>, Yongfu Li, Yuanshan Pan, Xinfei Guo#,
+            <i>Descriptor: An EDA Physical Design Rectilinear Floorplan Benchmark Dataset.</i>
+            IEEE Data Descriptions, 2026.
+          </li>
+
+          <li>
+            Xiaotian Zhao, <strong>Zixuan Li</strong>, Yichen Cai, Jiayin Chen, Yuanshan Pan, Xinfei Guo#,
+            <i>DARE: Enriching Physical Dataflow Awareness for Macro Placement Optimization.</i>
+            ACM Transactions on Design Automation of Electronic Systems (<span class="venue">TODAES</span>), 2026.
+          </li>
+        </ul>
+
+        <div class="year-title">2025</div>
+        <ul class="pub-list">
+          <li>
+            <strong>Zixuan Li</strong>, Kanglin Tian, Jianwang Zhai#, Zirui Li, Kang Zhao,
+            <i>HieRFP: A Hierarchical Recognition Framework and Floorplanning for Reusable Modules.</i>
+            IEEE International Symposium on Circuits and Systems (<span class="venue">ISCAS</span>), 2025.
+          </li>
+
+          <li>
+            Zirui Li*, Kanglin Tian*, Jianwang Zhai#, <strong>Zixuan Li</strong>, Shixiong Kai, Siyuan Xu, Bei Yu, Kang Zhao,
+            <i>FTAFP: A Feedthrough-Aware Floorplanner for Hierarchical Design of Large-Scale SoCs.</i>
+            IEEE/ACM Asian and South Pacific Design Automation Conference (<span class="venue">ASP-DAC</span>), 2025.
+          </li>
+        </ul>
+
+        <div class="year-title">2024</div>
+        <ul class="pub-list">
+          <li>
+            Zirui Li, Jianwang Zhai#, <strong>Zixuan Li</strong>, Zhongdong Qi, Kang Zhao,
+            <i>Effective Resource Model and Cost Scheme for Maze Routing in 3D Global Routing.</i>
+            IEEE International Symposium on Circuits and Systems (<span class="venue">ISCAS</span>), 2024.
+          </li>
+        </ul>
+      </section>
+
+      <section class="section" id="skills">
+        <h2>Skills</h2>
+        <p>C/C++, Python, LaTeX, TCL</p>
+        <a class="back-to-top" href="#top">↑ Back to top</a>
+      </section>
+
+      <div class="footer">© 2026 Zixuan Li</div>
+    </main>
   </div>
-
-  <h2>Biography</h2>
-  <hr class="section-hr">
-  <p>
-    I am currently a first-year M.S. student with the iCAS Lab at Shanghai Jiao Tong University,
-    under the supervision of <a href="https://sites.gc.sjtu.edu.cn/xinfei-guo/">Prof. Xinfei Guo</a>.
-    I received my B.Eng. degree in Information Engineering from Beijing University of Posts and Telecommunications in 2025.
-  </p>
-  <p>
-    My research focuses on electronic design automation (EDA), particularly physical design for 2.5D and 3D integrated circuits,
-    including placement and floorplanning optimization.
-  </p>
-
-  <h2>Research Interests</h2>
-  <hr class="section-hr">
-  <ul>
-    <li>Physical Design (2.5D / 3D ICs)</li>
-    <li>Machine Learning for EDA</li>
-  </ul>
-
-  <h2>Education</h2>
-  <hr class="section-hr">
-  <ul>
-    <li><strong>Shanghai Jiao Tong University</strong>, M.S. in Computer Science and Technology, 2025–Present</li>
-    <li><strong>Beijing University of Posts and Telecommunications</strong>, B.Eng. in Information Engineering, 2021–2025</li>
-  </ul>
-
-  <h2>Research Experience</h2>
-  <hr class="section-hr">
-  <ul>
-    <li><strong>SJTU Global College iCAS Lab</strong>, Research Intern (2024–2025)</li>
-    <li><strong>BUPT Integrated EDA Team</strong>, Research Intern (2023–2025)</li>
-  </ul>
-
-<h2>Publications</h2>
-<hr class="section-hr">
-
-<p class="pub-note">
-* denotes equal contribution, # denotes corresponding author.
-</p>
-
-<div class="year-title">2026</div>
-<ul class="pub-list">
-  <li>
-    <strong>Zixuan Li*</strong>, Kanglin Tian*, Fan Hu, Zirui Li, Xinyue Wu, Hengyuan Zhang, Shixin Chen, Jianwang Zhai#, Xinfei Guo#, Kang Zhao, 
-    <i>ChiPlanner: Physically-Aware and Timing-Driven Design Planner for 2.5D Multi-Chiplet Systems.</i> 
-    ACM/IEEE Design Automation Conference (<span class="venue">DAC</span>), 2026.
-  </li>
-
-  <li>
-    Xiaotian Zhao*, Yingjie Wang*, <strong>Zixuan Li</strong>, Yongfu Li, Yuanshan Pan, Xinfei Guo#, 
-    <i>Descriptor: An EDA Physical Design Rectilinear Floorplan Benchmark Dataset.</i> 
-    IEEE Data Descriptions, 2026. 
-  </li>
-
-  <li>
-    Xiaotian Zhao, <strong>Zixuan Li</strong>, Yichen Cai, Jiayin Chen, Yuanshan Pan, Xinfei Guo#, 
-    <i>DARE: Enriching Physical Dataflow Awareness for Macro Placement Optimization.</i> 
-    ACM Transactions on Design Automation of Electronic Systems (<span class="venue">TODAES</span>), 2026. 
-  </li>
-</ul>
-
-<div class="year-title">2025</div>
-<ul class="pub-list">
-  <li>
-    <strong>Zixuan Li</strong>, Kanglin Tian, Jianwang Zhai#, Zirui Li, Kang Zhao, 
-    <i>HieRFP: A Hierarchical Recognition Framework and Floorplanning for Reusable Modules.</i> 
-    IEEE International Symposium on Circuits and Systems (<span class="venue">ISCAS</span>), 2025.
-  </li>
-
-  <li>
-    Zirui Li*, Kanglin Tian*, Jianwang Zhai#, <strong>Zixuan Li</strong>, Shixiong Kai, Siyuan Xu, Bei Yu, Kang Zhao, 
-    <i>FTAFP: A Feedthrough-Aware Floorplanner for Hierarchical Design of Large-Scale SoCs.</i> 
-    IEEE/ACM Asian and South Pacific Design Automation Conference (<span class="venue">ASP-DAC</span>), 2025.
-  </li>
-
-
-</ul>
-
-<div class="year-title">2024</div>
-<ul class="pub-list">
-  <li>
-    Zirui Li, Jianwang Zhai#, <strong>Zixuan Li</strong>, Zhongdong Qi, Kang Zhao, 
-    <i>Effective Resource Model and Cost Scheme for Maze Routing in 3D Global Routing.</i> 
-    IEEE International Symposium on Circuits and Systems (<span class="venue">ISCAS</span>), 2024.
-  </li>
-</ul>
-  
-  <h2>Skills</h2>
-  <hr class="section-hr">
-  <p>C/C++, Python, LaTeX, TCL</p>
-
-  <div class="footer">© 2026 Zixuan Li</div>
-
-</div>
 </body>
 </html>
