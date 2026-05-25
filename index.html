@@ -114,6 +114,7 @@ h1 {
 a {
   color: var(--primary);
   text-decoration: none;
+  overflow-wrap: break-word;
 }
 
 .section {
@@ -152,10 +153,13 @@ li { margin-bottom: 8px; }
   color: #111827;
 }
 
+#publications {
+  counter-reset: pubcounter;
+}
+
 .pub-list {
   list-style: none;
   padding-left: 0;
-  counter-reset: pubcounter;
 }
 
 .pub-list li {
@@ -212,8 +216,9 @@ li { margin-bottom: 8px; }
     <main class="card">
       <div class="header">
         <div class="photo">
-          <img src="photo.gif" alt="Photo">
+          <img src="photo.gif" alt="Portrait of Zixuan Li" loading="lazy" decoding="async">
         </div>
+
         <div>
           <h1>Zixuan Li</h1>
           <div class="contact">
@@ -227,8 +232,10 @@ li { margin-bottom: 8px; }
       <section class="section" id="bio">
         <h2>Biography</h2>
         <p>
-          I am currently a first-year M.S. student with the <a href="https://sites.gc.sjtu.edu.cn/icas/">iCAS Lab</a> at Shanghai Jiao Tong University,
-          under the supervision of <a href="https://sites.gc.sjtu.edu.cn/xinfei-guo/">Prof. Xinfei Guo</a>.
+          I am currently a first-year M.S. student in the
+          <a href="https://sites.gc.sjtu.edu.cn/icas/" target="_blank" rel="noopener noreferrer">iCAS Lab</a>
+          at Shanghai Jiao Tong University, under the supervision of
+          <a href="https://sites.gc.sjtu.edu.cn/xinfei-guo/" target="_blank" rel="noopener noreferrer">Prof. Xinfei Guo</a>.
           I received my B.Eng. degree in Information Engineering from Beijing University of Posts and Telecommunications in 2025.
         </p>
         <p>
@@ -240,23 +247,39 @@ li { margin-bottom: 8px; }
       <section class="section" id="interests">
         <h2>Research Interests</h2>
         <ul>
-          <li>Physical Design (2.5D / 3D ICs)</li>
+          <li>Physical Design for 2.5D / 3D ICs</li>
           <li>Machine Learning for EDA</li>
         </ul>
       </section>
 
-
       <section class="section" id="news">
         <h2>News</h2>
         <ul>
-          <li>May 2026: Our survey on shift-left methodologies in EDA was accepted ACM Computing Surveys (CSUR). <li>
+          <li>May 2026: Our survey on shift-left methodologies in EDA was accepted by <strong>ACM Computing Surveys (CSUR)</strong>.</li>
           <li>Apr 2026: Selected as a DAC Young Fellow.</li>
-          <li>Mar 2026: Our work on rectilinear floorplanning benchmarks was accepted by IEEE Data Descriptions.</li>
-          <li>Feb 2026: Our work on early stage chiplet physical design planning was accepted by <strong>DAC 2026</strong>.</li>
+          <li>Mar 2026: Our work on rectilinear floorplanning benchmarks was accepted by <strong>IEEE Data Descriptions</strong>.</li>
+          <li>Feb 2026: Our work on early-stage chiplet physical design planning was accepted by <strong>DAC 2026</strong>.</li>
           <li>Jan 2026: Our work on dataflow optimization in macro placement was accepted by <strong>TODAES</strong>.</li>
-          <li>Sep 2025: Our work on shift-left methodologies in EDA has been released on <a href="https://arxiv.org/abs/2509.14551">arXiv</a>. We have also released a curated repository on <a href="https://github.com/iCAS-SJTU/Shift-Left-EDA-Papers">GitHub</a>.
-          <li>Sep 2025: Joined <a href="https://sites.gc.sjtu.edu.cn/icas/">iCAS Lab</a>, Shanghai Jiao Tong University as an M.S. student, under the supervision of <a href="https://sites.gc.sjtu.edu.cn/xinfei-guo/">Prof. Xinfei Guo</a>.</li>
-          <li>Jun 2025: Graduated from Beijing University of Posts and Telecommunications with a B.Eng. degree in Information Engineering. I am sincerely grateful to <a href="https://zhaijw18.github.io/" target="_blank">Prof. Jianwang Zhai</a>  and <a href="https://zhaokang-lab.github.io/" target="_blank">Prof. Kang Zhao</a> for their invaluable guidance and support. </li>
+          <li>
+            Sep 2025: Our work on shift-left methodologies in EDA was released on
+            <a href="https://arxiv.org/abs/2509.14551" target="_blank" rel="noopener noreferrer">arXiv</a>.
+            We also released a curated repository on
+            <a href="https://github.com/iCAS-SJTU/Shift-Left-EDA-Papers" target="_blank" rel="noopener noreferrer">GitHub</a>.
+          </li>
+          <li>
+            Sep 2025: Joined
+            <a href="https://sites.gc.sjtu.edu.cn/icas/" target="_blank" rel="noopener noreferrer">iCAS Lab</a>,
+            Shanghai Jiao Tong University, as an M.S. student under the supervision of
+            <a href="https://sites.gc.sjtu.edu.cn/xinfei-guo/" target="_blank" rel="noopener noreferrer">Prof. Xinfei Guo</a>.
+          </li>
+          <li>
+            Jun 2025: Graduated from Beijing University of Posts and Telecommunications with a B.Eng. degree in Information Engineering.
+            I am sincerely grateful to
+            <a href="https://zhaijw18.github.io/" target="_blank" rel="noopener noreferrer">Prof. Jianwang Zhai</a>
+            and
+            <a href="https://zhaokang-lab.github.io/" target="_blank" rel="noopener noreferrer">Prof. Kang Zhao</a>
+            for their invaluable guidance and support.
+          </li>
           <li>Feb 2025: Our paper on symmetry optimization in floorplanning was accepted by <strong>ISCAS 2025</strong>.</li>
           <li>Dec 2024: Won the Second Prize in the EDA Elite Challenge.</li>
         </ul>
@@ -273,11 +296,10 @@ li { margin-bottom: 8px; }
       <section class="section" id="experience">
         <h2>Research Experience</h2>
         <ul>
-          <li><strong>SJTU Global College iCAS Lab</strong>, Research Intern (2024–2025)</li>
-          <li><strong>BUPT Integrated EDA Team</strong>, Research Intern (2023–2025)</li>
+          <li><strong>SJTU Global College iCAS Lab</strong>, Research Intern, 2024–2025</li>
+          <li><strong>BUPT Integrated EDA Team</strong>, Research Intern, 2023–2025</li>
         </ul>
       </section>
-
 
       <section class="section" id="publications">
         <h2>Publications</h2>
@@ -286,12 +308,14 @@ li { margin-bottom: 8px; }
         <div class="year-title">2026</div>
         <ul class="pub-list">
           <li>
-            Xinyue Wu*, <strong>Zixuan Li*<strong>, Fan Hu*, Ting Lin, Xiaotian Zhao, Runxi Wang, Xinfei Guo#,
-              <i>Shift-Left Techniques in Electronic Design Automation: A Survey.<i>
-                ACM Computing Surveys (<span class="venue">CSUR</span>), 2026.
+            Xinyue Wu*, <strong>Zixuan Li*</strong>, Fan Hu*, Ting Lin, Xiaotian Zhao, Runxi Wang, Xinfei Guo#,
+            <i>Shift-Left Techniques in Electronic Design Automation: A Survey.</i>
+            ACM Computing Surveys (<span class="venue">CSUR</span>), 2026.
+          </li>
+
           <li>
-          <li>
-            <strong>Zixuan Li*</strong>, Kanglin Tian*, Fan Hu, Zirui Li, Xinyue Wu, Hengyuan Zhang, Shixin Chen, Jianwang Zhai#, Xinfei Guo#, Kang Zhao,
+            <strong>Zixuan Li*</strong>, Kanglin Tian*, Fan Hu, Zirui Li, Xinyue Wu, Hengyuan Zhang, Shixin Chen,
+            Jianwang Zhai#, Xinfei Guo#, Kang Zhao,
             <i>ChiPlanner: Physically-Aware and Timing-Driven Design Planner for 2.5D Multi-Chiplet Systems.</i>
             ACM/IEEE Design Automation Conference (<span class="venue">DAC</span>), 2026.
           </li>
@@ -334,7 +358,6 @@ li { margin-bottom: 8px; }
         </ul>
       </section>
 
-      
       <section class="section" id="awards">
         <h2>Awards</h2>
         <ul>
@@ -343,7 +366,6 @@ li { margin-bottom: 8px; }
         </ul>
       </section>
 
-      
       <div class="footer">© 2026 Zixuan Li</div>
     </main>
   </div>
